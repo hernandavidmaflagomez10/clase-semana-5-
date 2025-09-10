@@ -3,21 +3,21 @@ const cabezas = [
   "assets/img/cabeza_leon.png",
   "assets/img/cabeza_buho.png",
   "assets/img/cabeza_tiburon.png",
-  "assets/img/hojas.webp"
+  
 ];
 
 const cuerpos = [
   "assets/img/cuerpo_jirafa.png",
   "assets/img/cuerpo_pinguino.png",
   "assets/img/cuerpo_dragon.png",
-  "assets/img/hojas.webp"
+  
 ];
 
 const patas = [
   "assets/img/patas_canguro.png",
   "assets/img/patas_pulpo.png",
   "assets/img/patas_caballo.png",
-  "assets/img/hojas.webp"
+  
 ];
 
 // Referencias a las etiquetas
