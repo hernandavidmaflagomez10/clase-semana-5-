@@ -1,53 +1,40 @@
-// Listas de imágenes
-const listaCabezas = [
-  "../assets/img/cabeza1.jpg",
-  "../assets/img/cabeza2.jpg",
-  "../assets/img/cabeza3.png",
-];
-const listaTroncos = [
- "../assets/img/tronco1.jpg",
-  "../assets/img/tronco2.jpg",
-  "../assets/img/tronco3.jpg",
-];
-const listaPatas = [
-  "../assets/img/patas1.jpg",
-  "../assets/img/patas2.jpg",
-  "../assets/img/patas3.png",
+// Arrays con las imágenes de cada parte
+const cabezas = [
+  "assets/img/cabeza_leon.png",
+  "assets/img/cabeza_buho.png",
+  "assets/img/cabeza_tiburon.png",
+  "../clase-semana-5-/assets/img/hojas.webp"
 ];
 
-// Obtenemos los contenedores de las imágenes del HTML usando los IDs
-const cabeza = document.getElementById("cabeza");
-const tronco = document.getElementById("tronco");
-const patas = document.getElementById("patas");
-const boton = document.getElementById("boton");
+const cuerpos = [
+  "assets/img/cuerpo_jirafa.png",
+  "assets/img/cuerpo_pinguino.png",
+  "assets/img/cuerpo_dragon.png",
+  "../clase-semana-5-/assets/img/hojas.webp"
+];
 
-// Inicializamos las variables de los números aleatorios
-let cabezaAleatorio = 0;
-let troncoAleatorio = 0;
-let patasAleatorio = 0;
+const patas = [
+  "assets/img/patas_canguro.png",
+  "assets/img/patas_pulpo.png",
+  "assets/img/patas_caballo.png",
+  "../clase-semana-5-/assets/img/hojas.webp"
+];
 
-// Función para generar un número aleatorio entre dos valores
-function numeroAleatorio(min, max) {
-  return Math.floor(Math.random() * (max - min) + min);
+// Referencias a las etiquetas
+const $cabeza = document.getElementById("cabeza");
+const $cuerpo = document.getElementById("cuerpo");
+const $patas  = document.getElementById("patas");
+const $boton  = document.getElementById("boton");
+
+function random(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
 }
 
-// Función para crear una nueva bestia con tres imágenes elegidas aleatoriamente
-function generarBestia() {
-  cabezaAleatorio = numeroAleatorio(0, listaCabezas.length);
-  troncoAleatorio = numeroAleatorio(0, listaTroncos.length);
-  patasAleatorio = numeroAleatorio(0, listaPatas.length);
-
-  // Asignamos la nueva fuente (source) a cada imagen
-  cabeza.src = `${listaCabezas[cabezaAleatorio]}`; //ruta + listaCabezas[cabezaAleatorio];
-  tronco.src = `${listaTroncos[troncoAleatorio]}`;
-  patas.src = `${listaPatas[patasAleatorio]}`;
-
-  console.log(cabezaAleatorio, troncoAleatorio, patasAleatorio);
+function generarCriatura() {
+  $cabeza.src = random(cabezas);
+  $cuerpo.src = random(cuerpos);
+  $patas.src  = random(patas);
 }
 
-// Generamos un nuevo collage cada vez que hacemos click en el botón "mezclar"
-boton.addEventListener("click", function () {
-  generarBestia();
-});
+$boton.addEventListener("click", generarCriatura);
 
-generarBestia();
