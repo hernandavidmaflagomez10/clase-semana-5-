@@ -1,21 +1,87 @@
- <!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mi Bestiario</title>
-  <link rel="stylesheet" href="estilo.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Presentación de Hernán</title>
+  <style>
+    :root { --bg:#f4f4f9; --card:#fff; --text:#2c3e50; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; padding: 24px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text); background: var(--bg); text-align: center;
+    }
+    h1 { margin: 0 0 6px; }
+    p.lead { margin: 0 0 18px; font-size: 18px; }
+    button {
+      background: #e11818; color: #d72020; border: 0;
+      padding: 12px 20px; border-radius: 8px; font-size: 16px; cursor: pointer;
+    }
+    button:hover { background:#27ae60; }
+    .carreras { display: none; margin-top: 22px; }
+    .grid {
+      display: grid; gap: 18px; margin: 0 auto; max-width: 1080px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+    .carrera {
+      background: var(--card); border-radius: 12px; padding: 14px;
+      box-shadow: 0 6px 16px rgba(216, 20, 20, 0.08); text-align: left;
+    }
+    .carrera img {
+      width: 100%; height: auto; border-radius: 10px; display: block;
+    }
+    .descripcion { margin-top: 10px; }
+    .descripcion h3 { margin: 0 0 4px; }
+    .footer { margin-top: 26px; font-size: 13px; opacity:.75; }
+  </style>
 </head>
 <body>
-  <main id="contenedorGeneral">
-    <h1 id="tituloPagina">Bestiario Salvaje</h1>
-    <section id="contenedorPersonaje" aria-label="Criatura">
-      <img id="cabeza" class="imagen" alt="Cabeza animal" src="assets/img/cabeza_leon.png" />
-      <img id="cuerpo" class="imagen" alt="Cuerpo animal" src="assets/img/cuerpo_jirafa.png" />
-      <img id="patas" class="imagen" alt="Patas animal" src="assets/img/patas_canguro.png" />
-    </section>
-    <button id="boton" type="button">Generar criatura</button>
-  </main>
-  <script src="script.js"></script>
+  <h1>Hola, soy Hernán</h1>
+  <p class="lead">Tengo 17 años y practico ciclismo de ruta y de montaña y siempre me quedo del grupo o me caigo jajajajajaj</p>
+
+  <button id="btnVer" onclick="mostrarCarreras()">Ver carreras</button>
+
+  <section id="carreras" class="carreras" aria-live="polite">
+    <h2 style="margin:18px 0 8px;">Mis carreras</h2>
+    <div class="grid">
+      <!-- Carrera 1: Segunda etapa -->
+      <article class="carrera">
+        <img src="assets/img/IMG_2694.JPG" alt="Hernán en la segunda etapa de la Vuelta al Tolima" loading="lazy">
+        <div class="descripcion">
+          <h3>Vuelta al Tolima — 2ª etapa</h3>
+          <p>Etapa bajo la lluvia 🌧️, ( cule frio que hacia ),  gran esfuerzo en la subida final. Una experiencia exigente y emocionante, fue una etapa de 60 kilometros, con descensos muy peligrosos y altas velocidades .</p>
+        </div>
+      </article>
+
+      <!-- Carrera 2: Tercera etapa -->
+      <article class="carrera">
+        <img src="assets/img/IMG_2841.JPG" alt="Hernán en la tercera etapa de la Vuelta al Tolima" loading="lazy">
+        <div class="descripcion">
+          <h3>Vuelta al Tolima — 3ª etapa</h3>
+          <p>Terreno quebrado y ritmo fuerte (tambien me quede y compre terreno jajajajjaja)🔥. Logré mantener un buen ritmo y cerrar con buena sensaciónes este dia en la meta, sorteamos varias caidas y logramos llegar sanos y salvos todo mi equipo, fue una etapa de 90 klometros .</p>
+        </div>
+      </article>
+
+      <!-- Carrera 3: Gran Fondo Boyacá Mundial -->
+      <article class="carrera">
+        <img src="assets/img/IMG_3701.jpg" alt="Hernán en el Gran Fondo Boyacá Mundial" loading="lazy">
+        <div class="descripcion">
+          <h3>Gran Fondo Boyacá Mundial, duitama</h3>
+          <p>Competencia con alta exigencia en carretera. Gran ambiente ciclístico y una prueba clave para medirnos con los ciclistas elites,que llevaban un ritmo muy rapido, lo intente pero me quede (de nuevo) :(, esta fue una carrera de solo un dia y fueron 170 kilometros .</p>
+        </div>
+      </article>
+    </div>
+    
+
+  <script>
+    function mostrarCarreras() {
+      const sec = document.getElementById('carreras');
+      const btn = document.getElementById('btnVer');
+      sec.style.display = 'block';
+      btn.style.display = 'none';
+      sec.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>
