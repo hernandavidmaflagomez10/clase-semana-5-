@@ -37,20 +37,20 @@
   </style>
 </head>
 <body>
-  <h1>Hola, soy Hernán</h1>
-  <p class="lead">Tengo 17 años y practico ciclismo de ruta y de montaña y siempre me quedo del grupo o me caigo jajajajajaj</p>
+  <h1>Hola, soy Hernán Gomez</h1>
+  <p class="lead"> soy de tunja, Tengo 17 años y practico ciclismo de ruta y de montaña hace 6 años  y siempre me quedo del grupo o me caigo jajajajajaj</p>
 
   <button id="btnVer" onclick="mostrarCarreras()">Ver carreras</button>
 
   <section id="carreras" class="carreras" aria-live="polite">
-    <h2 style="margin:18px 0 8px;">Mis carreras</h2>
+    <h2 style="margin:18px 0 8px;"> alguna de Mis carreras</h2>
     <div class="grid">
       <!-- Carrera 1: Segunda etapa -->
-      <article class="carrera">
+      <article class="carrera>
         <img src="assets/img/IMG_2694.JPG" alt="Hernán en la segunda etapa de la Vuelta al Tolima" loading="lazy">
         <div class="descripcion">
-          <h3>Vuelta al Tolima — 2ª etapa</h3>
-          <p>Etapa bajo la lluvia 🌧️, ( cule frio que hacia ),  gran esfuerzo en la subida final. Una experiencia exigente y emocionante, fue una etapa de 60 kilometros, con descensos muy peligrosos y altas velocidades .</p>
+          <h3>Vuelta al Tolima 2025 — 2ª etapa</h3>
+          <p>Etapa bajo la lluvia, mucha lluvia 🌧️, ( cule frio que hacia ),  gran esfuerzo en la subida final. Una experiencia exigente y emocionante, fue una etapa de 60 kilometros, con descensos muy peligrosos y altas velocidades .</p>
         </div>
       </article>
 
@@ -59,7 +59,7 @@
         <img src="assets/img/IMG_2841.JPG" alt="Hernán en la tercera etapa de la Vuelta al Tolima" loading="lazy">
         <div class="descripcion">
           <h3>Vuelta al Tolima — 3ª etapa</h3>
-          <p>Terreno quebrado y ritmo fuerte (tambien me quede y compre terreno jajajajjaja)🔥. Logré mantener un buen ritmo y cerrar con buena sensaciónes este dia en la meta, sorteamos varias caidas y logramos llegar sanos y salvos todo mi equipo, fue una etapa de 90 klometros .</p>
+          <p>Terreno quebrado y ritmo fuerte (tambien me quede y compre terreno jajajajjaja)🔥. Logré mantener un buen ritmo y cerrar con buena sensaciónes este dia en la meta, sorteamos varias caidas y logramos llegar medio sanos y salvos todo mi equipo, fue una etapa de 90 kilometros . (mi mama casi me decomisa mi bicicleta ese dia)</p>
         </div>
       </article>
 
@@ -72,7 +72,27 @@
         </div>
       </article>
     </div>
+    <button style="margin-top:20px;" onclick="mostrarOdin()">Siguiente ➡️</button>
+  </section>
+
+  <!-- Sección Odin -->
+  <section id="odin" class="odin"></section>
+    <h2>Mi compañero 🐶</h2>
+    <p>Tengo un perro que se llama <strong>Odin</strong>. Es parte de mi vida y me acompaña en mis entrenamientos y descansos, (es grosero con sus compañeritos pero lo quiero mucho)</p>
+    <img src="./assets/img/IMG_3333.JPG" 
+     alt="" loading="lazy"> 
+  </section>
+
+  <script>
     
+    function mostrarOdin() {
+      document.getElementById('odin').style.display = 'block';
+      document.getElementById('carreras').style.display = 'none';
+      document.getElementById('odin').scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
 
   <script>
     function mostrarCarreras() {
