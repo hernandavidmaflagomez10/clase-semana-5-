@@ -31,6 +31,9 @@
     .carrera img {
       width: 100%; height: auto; border-radius: 10px; display: block;
     }
+    .familia img {
+      width: 100%; height: auto; border-radius: 10px; display: block;
+    }
     .descripcion { margin-top: 10px; }
     .descripcion h3 { margin: 0 0 4px; }
     .footer { margin-top: 26px; font-size: 13px; opacity:.75; }
@@ -46,7 +49,7 @@
     <h2 style="margin:18px 0 8px;"> alguna de Mis carreras</h2>
     <div class="grid">
       <!-- Carrera 1: Segunda etapa -->
-      <article class="carrera>
+      <article class="carrera">
         <img src="assets/img/IMG_2694.JPG" alt="Hernán en la segunda etapa de la Vuelta al Tolima" loading="lazy">
         <div class="descripcion">
           <h3>Vuelta al Tolima 2025 — 2ª etapa</h3>
@@ -59,7 +62,7 @@
         <img src="assets/img/IMG_2841.JPG" alt="Hernán en la tercera etapa de la Vuelta al Tolima" loading="lazy">
         <div class="descripcion">
           <h3>Vuelta al Tolima — 3ª etapa</h3>
-          <p>Terreno quebrado y ritmo fuerte (tambien me quede y compre terreno jajajajjaja)🔥. Logré mantener un buen ritmo y cerrar con buena sensaciónes este dia en la meta, sorteamos varias caidas y logramos llegar medio sanos y salvos todo mi equipo, fue una etapa de 90 kilometros . (mi mama casi me decomisa mi bicicleta ese dia)</p>
+          <p>Terreno muy quebrado y ritmo fuerte (tambien me quede y compre terreno jajajajjaja)🔥. Logré mantener un buen ritmo y cerrar con buena sensaciónes este dia en la meta, sorteamos varias caidas y logramos llegar medio sanos y salvos todo mi equipo, fue una etapa de 90 kilometros . (mi mama casi me decomisa mi bicicleta ese dia)</p>
         </div>
       </article>
 
@@ -67,7 +70,7 @@
       <article class="carrera">
         <img src="assets/img/IMG_3701.jpg" alt="Hernán en el Gran Fondo Boyacá Mundial" loading="lazy">
         <div class="descripcion">
-          <h3>Gran Fondo Boyacá Mundial, duitama</h3>
+          <h3>Gran Fondo Boyacá Mundial 2024, duitama</h3>
           <p>Competencia con alta exigencia en carretera. Gran ambiente ciclístico y una prueba clave para medirnos con los ciclistas elites,que llevaban un ritmo muy rapido, lo intente pero me quede (de nuevo) :(, esta fue una carrera de solo un dia y fueron 170 kilometros .</p>
         </div>
       </article>
@@ -78,23 +81,36 @@
   <!-- Sección Odin -->
   <section id="odin" class="odin"></section>
     <h2>Mi compañero 🐶</h2>
-    <p>Tengo un perro que se llama <strong>Odin</strong>. Es parte de mi vida y me acompaña en mis entrenamientos y descansos, (es grosero con sus compañeritos pero lo quiero mucho)</p>
+    <p>Tengo un perrito que se llama <strong>Odin</strong>. Es parte de mi vida y me acompaña en mis entrenamientos y descansos, (es grosero con sus compañeritos pero lo quiero mucho)</p>
     <img src="./assets/img/IMG_3333.JPG" 
      alt="" loading="lazy"> 
+     <button style="margin-top:20px;" onclick="mostrarFamilia()">Siguiente ➡️</button>
   </section>
+  <section id="familia" class="familia">
+    <h2>Mi familia :) </h2>
+    <p>en tunja vivo con mi mamá, mi hermaná y mi perro <strong>Odin</strong> los amo </p>
+    <img src="./assets/img/IMG_7088.jpeg" 
+     alt="" loading="lazy"> 
+     
+  </section>
+  
+
 
   <script>
     
+
+    function mostrarFamilia() {
+      document.getElementById('familia').style.display = 'block';
+      document.getElementById('odin').style.display = 'none';
+      document.getElementById('familia').scrollIntoView({ behavior: 'smooth' });
+    }
+
     function mostrarOdin() {
       document.getElementById('odin').style.display = 'block';
       document.getElementById('carreras').style.display = 'none';
       document.getElementById('odin').scrollIntoView({ behavior: 'smooth' });
     }
-  </script>
-</body>
-</html>
-
-  <script>
+  
     function mostrarCarreras() {
       const sec = document.getElementById('carreras');
       const btn = document.getElementById('btnVer');
